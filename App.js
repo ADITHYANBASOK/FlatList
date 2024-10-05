@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { View, StyleSheet, Text, FlatList } from "react-native";
 
-export default function App() {
+import ColorBox from "./Src/Components/ColorBox";
+import { ArrayColors } from "./Src/Components/RawData";
+const App = () => {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <FlatList
+      style={style.container}
+      data={ArrayColors}
+      keyExtractor={(item) => item.hex}
+      renderItem={({ item }) => <ColorBox hexValue={item.hex} name={item.name} />}
+      ListHeaderComponent={<Text style={style.text}>List of Colors</Text>}
+    />
 
-const styles = StyleSheet.create({
+  );
+};
+export default App;
+const style = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexGrow: 1,
+    paddingTop: 30,
+    paddingHorizontal: 2,
+    paddingBottom: 10,
   },
-});
+  text: {
+    fontWeight: "800",
+    color: "black",
+    marginBottom: 20,
+  }
+})
