@@ -21,7 +21,7 @@ const style = StyleSheet.create({
         borderRadius: 3,
         justifyContent: "center",
         alignItems: "center",
-        marginBottom: 10,
+        margin: 10,
     },
     text: {
         fontWeight: "800",

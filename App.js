@@ -19,7 +19,6 @@ const App = () => {
 export default App;
 const style = StyleSheet.create({
   container: {
-    flexGrow: 1,
     paddingTop: 30,
     paddingHorizontal: 2,
     paddingBottom: 10,
